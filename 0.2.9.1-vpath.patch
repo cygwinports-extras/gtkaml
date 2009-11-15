@@ -1,0 +1,31 @@
+--- origsrc/gtkaml-0.2.9.1/src/Makefile.am	2009-11-09 17:04:32.000000000 -0600
++++ src/gtkaml-0.2.9.1/src/Makefile.am	2009-11-14 21:23:50.273392600 -0600
+@@ -45,7 +45,7 @@ gtkamlc_SOURCES = \
+ 	GtkamlSAXParser_start_parsing.c
+ 
+ gtkamlc.vala.stamp: $(gtkamlc_VALASOURCES)
+-	$(VALAC) -h gtkamlc.h -C $(VALAFLAGS) --vapidir=../vapi --pkg config --pkg libxml-2.0 --pkg vala-1.0 $^ 
++	$(VALAC) -h gtkamlc.h -C $(VALAFLAGS) --vapidir=$(top_srcdir)/vapi --pkg config --pkg libxml-2.0 --pkg vala-1.0 $^ 
+ 	touch $@
+ 
+ gtkamlc_LDADD = \
+--- origsrc/gtkaml-0.2.9.1/tests/Makefile.am	2009-09-21 08:15:57.000000000 -0500
++++ src/gtkaml-0.2.9.1/tests/Makefile.am	2009-11-14 21:24:47.307092000 -0600
+@@ -28,7 +28,7 @@ test0_LDADD = \
+ 	$(EXTRA_LDFLAGS)
+ 
+ test0.stamp : $(test0_GTKAMLSOURCES)
+-	../src/gtkamlc -C $(VALAFLAGS) --implicitsdir ../data --pkg gtk+-2.0 $^
++	../src/gtkamlc -C $(VALAFLAGS) --implicitsdir $(top_srcdir)/data --pkg gtk+-2.0 $^
+ 	touch $@
+ 
+ ## Example 1
+@@ -46,7 +46,7 @@ test1_LDADD = \
+ 	$(EXTRA_LDFLAGS)
+ 
+ test1.stamp : $(test1_GTKAMLSOURCES)
+-	../src/gtkamlc -C $(VALAFLAGS) --implicitsdir ../data --pkg gtk+-2.0 $^
++	../src/gtkamlc -C $(VALAFLAGS) --implicitsdir $(top_srcdir)/data --pkg gtk+-2.0 $^
+ 	touch $@
+ 
+ 
