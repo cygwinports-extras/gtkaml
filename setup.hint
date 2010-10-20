@@ -1,5 +1,5 @@
 category: Devel
-requires: libgcc1 libglib2.0_0 libvala0 libxml2 vala-gtk2.0
+requires: libglib2.0_0 libvala0.10_0 libxml2 vala-gtk2.0
 sdesc: "GTK+Vala Application Markup Language compiler"
 ldesc: "Gtkaml is an XML parser that extends the Vala.Parser (literally) 
 and transforms casual XML markup into a valid Gtk+ UI class."

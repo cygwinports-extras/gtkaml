@@ -4,6 +4,6 @@ DESCRIPTION="GTK+Vala Application Markup Language compiler"
 HOMEPAGE="http://code.google.com/p/gtkaml/"
 SRC_URI="http://gtkaml.googlecode.com/files/${P}.tar.bz2"
 
-PATCH_URI="0.2.9.1-cygwin.patch
-           0.2.9.1-vpath.patch"
+PATCH_URI="0.2.9.1-cygwin.patch"
 
+DIFF_EXCLUDES="test*.vala"
