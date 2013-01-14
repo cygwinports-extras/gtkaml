@@ -1,0 +1,16 @@
+--- origsrc/gtkaml-0.5.94/libgtkaml/Makefile.am	2011-12-31 04:46:39.000000000 -0600
++++ src/gtkaml-0.5.94/libgtkaml/Makefile.am	2013-01-13 20:19:41.368485000 -0600
+@@ -17,10 +17,12 @@ dist_vapi_DATA = \
+ 	gtkaml-1.0.deps
+ 
+ libgtkaml_la_LIBADD = \
+-	$(GLIB_LIBS) \
++	$(GIO_LIBS) \
+ 	$(VALA_LIBS) \
+ 	$(LIBXML2_LIBS)
+ 
++libgtkaml_la_LDFLAGS = -no-undefined
++
+ lib_LTLIBRARIES = \
+ 	libgtkaml.la
+ 
