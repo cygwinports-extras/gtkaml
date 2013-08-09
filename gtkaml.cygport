@@ -2,21 +2,26 @@ inherit gnome2
 
 NAME="gtkaml"
 VERSION=0.5.94
-RELEASE=1
+RELEASE=2
 CATEGORY="Devel"
 SUMMARY="GTK+ Vala Application Markup Language compiler"
 DESCRIPTION="Gtkaml is an XML parser that extends the Vala.Parser (literally)
 and transforms casual XML markup into a valid Gtk+ UI class."
 HOMEPAGE="http://code.google.com/p/gtkaml/"
 SRC_URI="http://gtkaml.googlecode.com/files/${P}.tar.bz2"
-PATCH_URI="0.5.94-no-undefined.patch
-           0.5.94-vpath.patch"
+PATCH_URI="
+	0.5.94-no-undefined.patch
+	0.5.94-vpath.patch
+	0.5.94-vala020.patch
+"
 
 PKG_NAMES="${NAME} libgtkaml0 libgtkaml-devel vala-gtkaml1.0"
 gtkaml_CONTENTS="usr/bin/gtkaml* usr/share/doc/ usr/share/gtkaml/ usr/share/man/"
 libgtkaml0_CONTENTS="usr/bin/cyggtkaml-0.dll"
 libgtkaml_devel_CONTENTS="usr/include/ usr/lib/"
 vala_gtkaml1_0_CONTENTS="usr/share/vala/"
+
+DIFF_EXCLUDES="*.deps *.vapi"
 
 src_compile() {
 	cd ${S}
